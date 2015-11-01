@@ -1,23 +1,33 @@
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
+	<div class="container-fluid">
 
-    <div class="navbar-header">
+		<div class="navbar-header">
 			{{#link-to "index" class="navbar-brand"}}
 				<i class="glyphicon glyphicon-home"></i>
 			{{/link-to}}
-    </div>
 
-		<ul class="nav navbar-nav">
-			<li>
-				{{#link-to "users"}}users{{/link-to}}
-			</li>
-		</ul>
+			<p class="navbar-text" href="javascript:void(0)">
+			{{#if loginController.isLoggedIn}}
+				logged in as <b>{{loginController.user.name}}</b>
+			{{/if}}
+			</p>
+		</div>
 
-		<ul class="nav navbar-nav navbar-right">
-			<li>
-				{{#link-to "login"}}login{{/link-to}}
-			</li>
-		</ul>
+		<form class="navbar-form navbar-right">
+			<div class="form-group">
+				{{#if loginController.isLoggedIn}}
+					<button class="btn btn-default" {{action "logout"}}>
+						<i class="glyphicon glyphicon-log-out"></i>
+						&nbsp;logout
+					</button>
+				{{else}}
+					{{#link-to "login" class="btn btn-default"}}
+						<i class="glyphicon glyphicon-log-in"></i>
+						&nbsp;login
+					{{/link-to}}
+				{{/if}}
+			</div>
+		</form>
 
-  </div>
+	</div>
 </nav>
