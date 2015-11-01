@@ -3,6 +3,8 @@
 <h4 class="page-header">links</h4>
 
 {{#each model.links as |link|}}
-	<h4>{{link.key}}</h4>
+	<h4>
+		<a href={{link.shortHref}}>{{link.shortUrl}}</a>
+	</h4>
 	<b>{{link.url}}</b>
 {{/each}}
