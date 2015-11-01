@@ -5,10 +5,19 @@
 	<h4 class="page-header">links ({{model.linkCount}})</h4>
 
 	{{#each model.links as |link|}}
-		<h4>
-			<a href={{link.shortHref}}>{{link.shortUrl}}</a>
-		</h4>
-		<b>{{link.url}}</b>
+		 <div class="media">
+			<div class="media-left">
+				<img class="media-object img-thumbnail identicon" src={{link.identiconUrl}} />
+			</div>
+			<div class="media-body">
+				<h4>
+					<a href={{link.shortHref}}>{{link.shortUrl}}</a>
+				</h4>
+				<b>{{link.url}}</b>
+			</div>
+		</div>
+
+		<hr/>
 	{{/each}}
 
 {{/if}}

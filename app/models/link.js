@@ -10,6 +10,9 @@ export default DS.Model.extend({
 
   shortHref: function() {
     return `http://localhost:1323/go/${this.get('key')}`;
-  }.property('key')
+  }.property('key'),
 
+  identiconUrl: function() {
+    return `http://sigil.cupcake.io/${this.get('key')}`
+  }.property('key')
 });

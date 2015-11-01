@@ -20,7 +20,8 @@ module.exports = function(environment) {
   };
 
   ENV.contentSecurityPolicy = {
-    'connect-src': "'self' localhost:1323"
+    'connect-src': "'self' localhost:1323",
+    'img-src': "'self' sigil.cupcake.io"
   };
 
 

@@ -1,3 +1,8 @@
 #application-container {
   margin-top: 50px;
 }
+
+.identicon {
+  width: 64px;
+  height: 64px;
+}
