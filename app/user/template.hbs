@@ -1,10 +1,14 @@
 <h2>{{model.name}}</h2>
 
-<h4 class="page-header">links</h4>
+{{#if model.linkCount}}
 
-{{#each model.links as |link|}}
-	<h4>
-		<a href={{link.shortHref}}>{{link.shortUrl}}</a>
-	</h4>
-	<b>{{link.url}}</b>
-{{/each}}
+	<h4 class="page-header">links ({{model.linkCount}})</h4>
+
+	{{#each model.links as |link|}}
+		<h4>
+			<a href={{link.shortHref}}>{{link.shortUrl}}</a>
+		</h4>
+		<b>{{link.url}}</b>
+	{{/each}}
+
+{{/if}}
