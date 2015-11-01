@@ -1,0 +1,21 @@
+{{#if user.linkCount}}
+
+	<h4 class="page-header">links ({{user.linkCount}})</h4>
+
+	{{#each user.links as |link|}}
+		 <div class="media">
+			<div class="media-left">
+				<img class="media-object img-thumbnail identicon" src={{link.identiconUrl}} />
+			</div>
+			<div class="media-body">
+				<h4>
+					<a href={{link.shortHref}}>{{link.shortUrl}}</a>
+				</h4>
+				<b>{{link.url}}</b>
+			</div>
+		</div>
+
+		<hr/>
+	{{/each}}
+
+{{/if}}
