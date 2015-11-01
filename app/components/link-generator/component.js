@@ -31,6 +31,7 @@ export default Ember.Component.extend({
             key: response.link.key
           });
           this.get('user.links').pushObject(link);
+          this.set('url', '');
         },
 
         error: (err) => {
