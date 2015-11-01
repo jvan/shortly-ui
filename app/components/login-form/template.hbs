@@ -1,0 +1,68 @@
+<div class="panel panel-default">
+
+  <div class="panel-heading">
+    <h3 class="panel-title">log in or sign up</h3>
+  </div>
+
+  <div class="panel-body">
+    <div class="form-group has-feedback {{if errors.username 'has-error'}}">
+      <label class="control-label">
+        {{if errors.username errors.username "username"}}
+      </label>
+      <div class="input-group">
+        <div class="input-group-addon">
+          <i class="glyphicon {{if isEmailAddress 'glyphicon-envelope' 'glyphicon-user'}}"></i>
+        </div>
+        {{input type="text" value=username class="form-control"}}
+      </div>
+    </div>
+
+    <div class="form-group has-feedback {{if errors.password 'has-error'}}">
+      <label class="control-label">
+        {{if errors.password errors.password "password"}}
+      </label>
+      <div class="input-group">
+        <div class="input-group-addon">
+          <i class="glyphicon glyphicon-lock"></i>
+        </div>
+        {{input type="password" value=password class="form-control"}}
+      </div>
+    </div>
+
+    <div class="checkbox">
+      <label>
+        {{input type="checkbox" checked=isNewUser}}
+        I'm a new user
+      </label>
+    </div>
+  </div>
+
+  <div class="panel-footer">
+    {{#if isNewUser}}
+      <button class="btn btn-success" {{action "register"}}>
+        <i class="glyphicon glyphicon-pencil"></i>
+        &nbsp;sign up
+      </button>
+    {{else}}
+      <button class="btn btn-primary" {{action "login"}}>
+        <i class="glyphicon glyphicon-log-in"></i>
+        &nbsp;log in
+      </button>
+    {{/if}}
+  </div>
+
+</div>
+
+{{#if errors.login}}
+  <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>
+    {{errors.login}} 
+  </div>
+{{/if}}
+
+<div class="text-center">
+  <small>
+    <a class="text-muted" href="javascript:void(0)">forgot your password?</a>
+  </small>
+</div>
